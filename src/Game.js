@@ -79,10 +79,10 @@ class Game extends React.Component {
           result2: "Draw!",
           result1: "Draw!",
         });
+      }
     }, 910);
    
     }
-  }
 
   render() {
     return (
