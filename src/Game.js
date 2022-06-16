@@ -60,26 +60,27 @@ class Game extends React.Component {
           fourthDice: photos[`dice${randomDice4}`],
         },
       });
+      if (sum1 > sum2) {
+        this.setState({
+          score1: this.state.score1 + 1,
+          result1: "You won!!!, congrats",
+          result2: "you lost, try again)",
+        });
+      }
+      if (sum1 < sum2) {
+        this.setState({
+          score2: this.state.score2 + 1,
+          result2: "You won!!!, congrats",
+          result1: "you lost, try again)",
+        });
+      }
+      if (sum1 == sum2) {
+        this.setState({
+          result2: "Draw!",
+          result1: "Draw!",
+        });
     }, 910);
-    if (sum1 > sum2) {
-      this.setState({
-        score1: this.state.score1 + 1,
-        result1: "You won!!!, congrats",
-        result2: "you lost, try again)",
-      });
-    }
-    if (sum1 < sum2) {
-      this.setState({
-        score2: this.state.score2 + 1,
-        result2: "You won!!!, congrats",
-        result1: "you lost, try again)",
-      });
-    }
-    if (sum1 == sum2) {
-      this.setState({
-        result2: "Draw!",
-        result1: "Draw!",
-      });
+   
     }
   }
 
